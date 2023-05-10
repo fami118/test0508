@@ -1242,6 +1242,20 @@
 "tip": "提示:1公頃=100公畝=10000平方公尺",
 "explain": "公園的面積為500×200=100000(平方公尺),又因為1公頃=10000平方公尺,所以公園的面積為100000÷10000=10(公頃),學校的面積為公園的10÷10=1(倍)"
 }
+	  
+# G.計算學生題本答對率-2. score_rate_list存入題本答對率結果
+
+#題號數量
+test_length = len(reference_table['題號'])
+
+#計算題本答對率
+score_rate_list = []
+for i in range(0,len(stu_test)):
+    score_rate = round((stu_test['ch結果'][i]/test_length)*100,2)
+    score_rate_list.append(score_rate)
+
+# 新增欄位
+stu_test['ch題本答對率'] = score_rate_list 
       };
 
       // 迴圈生成表格的每一列
